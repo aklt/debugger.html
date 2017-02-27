@@ -17,7 +17,8 @@
 
 .conditional-breakpoint-panel input {
   margin: 5px 10px;
-  width: calc(100% - 4em);
+  /* TODO This is a hack until I find the right solution */
+  width: 300px;
   border: none;
   background: var(--theme-toolbar-background);
   font-size: 14px;

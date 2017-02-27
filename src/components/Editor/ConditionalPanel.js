@@ -33,8 +33,9 @@ function renderConditionalPanel({ condition, closePanel, setBreakpoint }:
       }),
 
       CloseButton({
+        buttonClass: "big",
         handleClick: closePanel,
-        buttonClass: "big"
+        tooltip: L10N.getStr("editor.conditionalPanel.closePanel")
       })
     ),
     panel
