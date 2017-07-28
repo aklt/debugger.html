@@ -27,7 +27,8 @@ type Props = {
   close: (value: any) => void,
   inputValue: string,
   placeholder: string,
-  size: string
+  size: string,
+  children: any
 };
 
 export default class Autocomplete extends Component {
@@ -133,7 +134,7 @@ export default class Autocomplete extends Component {
 
   render() {
     const { focused } = this.state;
-    const { size } = this.props;
+    const { size, children } = this.props;
     const searchResults = this.getSearchResults();
     const summaryMsg = L10N.getFormatStr(
       "sourceSearch.resultsSummary1",
@@ -157,6 +158,7 @@ export default class Autocomplete extends Component {
         onKeyDown: this.onKeyDown,
         handleClose: this.props.close
       }),
+      children,
       this.renderResults(searchResults)
     );
   }
