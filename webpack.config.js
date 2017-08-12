@@ -10,13 +10,17 @@ const projectPath = path.join(__dirname, "src");
  * returns an array so that we can prepend
  * hot-module-reloading in local development
  */
-function getEntry(filename) {
-  return [path.join(projectPath, filename)];
+function getEntry(filename, addHotLoader) {
+  let res = [path.join(projectPath, filename)];
+  if (addHotLoader) {
+    res.unshift("react-hot-loader/patch");
+  }
+  return res;
 }
 
 let webpackConfig = {
   entry: {
-    debugger: getEntry("main.js"),
+    debugger: getEntry("main.js", "hot"),
     "parser-worker": getEntry("utils/parser/worker.js"),
     "pretty-print-worker": getEntry("utils/pretty-print/worker.js"),
     "search-worker": getEntry("utils/search/worker.js")

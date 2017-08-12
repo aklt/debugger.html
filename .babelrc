@@ -10,6 +10,7 @@
     "transform-flow-strip-types",
     "transform-async-to-generator",
     "syntax-trailing-function-commas",
+    "react-hot-loader/babel",
 
     ["module-resolver", {
       "alias": {

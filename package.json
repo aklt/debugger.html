@@ -76,18 +76,9 @@
     "svg-inline-react": "^1.0.2",
     "wasmparser": "^0.4.10"
   },
-  "files": [
-    "src",
-    "assets"
-  ],
+  "files": ["src", "assets"],
   "greenkeeper": {
-    "ignore": [
-      "react",
-      "react-dom",
-      "react-redux",
-      "redux",
-      "codemirror"
-    ]
+    "ignore": ["react", "react-dom", "react-redux", "redux", "codemirror"]
   },
   "main": "src/main.js",
   "author": "Jason Laster <jlaster@mozilla.com>",
@@ -120,6 +111,7 @@
     "prettier": "^1.5.2",
     "react-addons-perf": "15.3.2",
     "react-addons-test-utils": "=15.3.2",
+    "react-hot-loader": "^3.0.0-beta.6",
     "remark-cli": "^4.0.0",
     "remark-lint": "^6.0.0",
     "remark-lint-list-item-bullet-indent": "^1.0.0",
@@ -140,47 +132,19 @@
     "yarn": "0.28.1"
   },
   "lint-staged": {
-    "*.js": [
-      "prettier",
-      "git add"
-    ],
-    "src/*.js": [
-      "prettier",
-      "git add"
-    ],
-    "src/*/*.js": [
-      "prettier",
-      "git add"
-    ],
-    "src/*/!(mochitest)**/*.js": [
-      "prettier",
-      "git add"
-    ],
-    "src/*/!(mochitest)*/**/*.js": [
-      "prettier",
-      "git add"
-    ]
+    "*.js": ["prettier", "git add"],
+    "src/*.js": ["prettier", "git add"],
+    "src/*/*.js": ["prettier", "git add"],
+    "src/*/!(mochitest)**/*.js": ["prettier", "git add"],
+    "src/*/!(mochitest)*/**/*.js": ["prettier", "git add"]
   },
   "jest": {
     "rootDir": "src",
-    "testMatch": [
-      "**/tests/**/*.js"
-    ],
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/helpers/",
-      "/fixtures/"
-    ],
-    "transformIgnorePatterns": [
-      "node_modules/(?!devtools-)"
-    ],
-    "setupFiles": [
-      "<rootDir>/test/tests-setup.js",
-      "jest-localstorage-mock"
-    ],
-    "snapshotSerializers": [
-      "jest-serializer-babel-ast"
-    ],
+    "testMatch": ["**/tests/**/*.js"],
+    "testPathIgnorePatterns": ["/node_modules/", "/helpers/", "/fixtures/"],
+    "transformIgnorePatterns": ["node_modules/(?!devtools-)"],
+    "setupFiles": ["<rootDir>/test/tests-setup.js", "jest-localstorage-mock"],
+    "snapshotSerializers": ["jest-serializer-babel-ast"],
     "setupTestFrameworkScriptFile": "<rootDir>/test/tests-framework.js",
     "moduleNameMapper": {
       "\\.css$": "<rootDir>/test/__mocks__/styleMock.js",
